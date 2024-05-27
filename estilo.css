@@ -1,0 +1,745 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    /*-- Colores base --*/
+    --blanco: #ffffff;
+    --gris: #949599;
+    
+  
+    /*-- Colores alternativos --*/
+    --clr-negro: #231f20;
+    --clr-rojo: #8b0305;
+  
+    /*-- Fonts --*/
+    --ff-primario: "Georgia", cursive;
+    --ff-titles: "Bebas Neue", sans-serif;
+    --ff-Secundary: "Gabriola", serif;
+  }
+
+  /*-- Header & Menu --*/
+header {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+    z-index: 100;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 0px 0px 10px 10px;
+  }
+header a img { /*-- Logotipo en el header --*/
+    width: 70px;
+}
+header span {  /*-- Nombre de la empresa --*/
+  color: var(--blanco);
+  font-size: 2em;
+  font-weight: bold;
+  text-shadow: 0 6px 4px #0004;
+  width: 35%;
+  text-align: end;
+}
+/*--  Menu RWD --*/
+nav {
+  width: 39%;
+  color: var(--blanco);
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-toggle {
+  font-size: 2.2em;
+  background: none;
+  border: none;
+  color: #e64a19;
+  cursor: pointer;
+  display: none; /* Hidden by default */
+}
+
+.menu-links {
+  display: flex;
+  gap: 1em;
+}
+
+.menu-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.menu-links a:hover {
+  color: #e64a19;
+}
+
+@media (max-width: 768px) {
+  header {
+    width: 95%;
+  }
+  header span {
+    font-size: 1.7em;
+  }
+  header a img {
+    width: 60px;
+  }
+  .menu-toggle {
+      display: block; /* Show button on small screens */
+  }
+
+  .menu-links {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    width: 100%;
+    left: 0;
+    top: 85px;
+    background-color: var(--clr-negro);
+    padding: 20px;
+    text-align: center;
+  }
+
+  .menu-links.active {
+      display: flex;
+  }
+}
+
+/*-- Sección Heroe --*/
+.hero {
+  position: relative;
+  height: 95vh;
+  background: url('imagenes/Firefly\ fondo\ para\ una\ sección\ hero\ de\ un\ sitio\ web\ en\ color\ negro\ 47609.jpg') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  margin-top: -105px;
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: white;
+  background: #ff5722;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #e64a19;
+}
+
+.testimonial {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+  max-width: 80%;
+}
+
+.testimonial p {
+  font-size: 1.2em;
+}
+
+/*-- Section cards index page --*/
+.cards-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 20px;
+  background-color: #000000;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 20px;
+  flex: 1 1 calc(33.333% - 40px); /* Ensures three cards in a row with some margin */
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 1.5em;
+  margin: 0 0 10px;
+}
+
+.card-description {
+  flex-grow: 1;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.card-link {
+  align-self: flex-start;
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.card-link:hover {
+  color: #0056b3;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .card {
+      flex: 1 1 calc(50% - 40px);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+      flex: 1 1 100%;
+  }
+}
+
+/*-- Sección dos columnas --*/
+.services-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  background-color: var(--gris);
+  gap: 2em;
+}
+
+.services-text {
+  flex: 1;
+  padding-right: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.services-text h2 {
+  font-size: 3.5em;
+  margin-bottom: 20px;
+  color: var(--clr-negro);
+}
+
+.services-text p {
+  font-size: 1.5em;
+  color: #f5f1f1;
+  line-height: 1.6;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.services-image {
+  flex: 1;
+  text-align: center;
+}
+
+.services-image .image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .services-section {
+      flex-direction: column;
+      text-align: center;
+  }
+  .services-text {
+      padding-right: 0;
+      padding-bottom: 20px;
+  }
+  .services-image {
+      text-align: center;
+  }
+}
+
+/*-- Sección Personal --*/
+.team-section {
+  padding: 40px;
+  text-align: center;
+  background-color: var(--blanco);
+}
+
+.team-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: var(--clr-negro);
+}
+
+.team-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.team-member {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+}
+
+.team-image {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+.team-member h3 {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.team-member p {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .team-container {
+      flex-direction: column;
+      align-items: center;
+  }
+  .team-member {
+      max-width: 90%;
+  }
+}
+
+/*-- Footer --*/
+.footer {
+  background-color: var(--clr-negro);
+  color: var(--blanco);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-column h3 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: var(--gris);
+}
+
+.footer-column p, .footer-column ul {
+  font-size: 1em;
+  margin: 0 0 10px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: var(--blanco);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #ff5722;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 1.5em;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ff5722;
+}
+
+.footer-bottom {
+  margin-top: 20px;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 1em;
+}
+.footer-bottom a {
+  text-decoration: none;
+  color: var(--blanco);
+}
+.footer-bottom a:hover {
+  color: #e64a19;
+}
+.footer-bottom span {
+  font-size: .9em;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+  }
+  .footer-column {
+      text-align: center;
+      margin-bottom: 20px;
+  }
+}
+
+/*-- Sección galeria de la agina Galeria --*/
+.galeria {
+  padding: 2em;
+  text-align: center;
+  
+}
+
+.galeria h2 {
+  margin-bottom: 1em;
+}
+
+.contenedor-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1em;
+}
+
+.foto {
+  overflow: hidden;
+  border: 5px solid #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.foto img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.2s;
+}
+
+.foto img:hover {
+  transform: scale(1.25);
+}
+
+/*-- Sección Intro de la pagina galeria --*/
+.intro {
+  background: url('imagenes/Firefly\ fondo\ para\ una\ sección\ hero\ de\ un\ sitio\ web\ en\ color\ negro\ 73129.jpg') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 4em 2em;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -95px;
+}
+
+.intro h1 {
+  font-size: 3em;
+  margin-bottom: 0.5em;
+}
+
+#dynamic-text {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+/*-- Sección intro de la pagina Quienes somos --*/
+.intro-qs {
+  background: url('imagenes/Firefly\ imagen\ debajo\ del\ agua\ con\ luces\ de\ colores\ azules\,\ rojas\,\ negras\ y\ plateadas\ 63717.jpg') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 4em 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  margin-top: -97px;
+}
+
+.intro-qs .content {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2em;
+  border-radius: 10px;
+}
+
+.intro-qs h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.intro-qs p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin: 1em 0;
+}
+
+/*-- Sección Mision, Vision y Valores de la pagina Quines somos --*/
+.mvv {
+  padding: 4em 2em;
+  text-align: center;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.tab-button {
+  padding: 0.5em 1em;
+  font-size: 1em;
+  border: none;
+  cursor: pointer;
+  background-color: #ddd;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.tab-button.active, .tab-button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content h2 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.tab-content p, .tab-content ul {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.tab-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tab-content ul li {
+  margin-bottom: 0.5em;
+}
+
+/*-- Sección perfiles de la pagina Quienes Somos --*/
+.perfil-fotografo {
+  padding: 4em 2em;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.fotografo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fotografo:hover {
+  transform: scale(1.05);
+}
+
+.perfil-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.perfil-info {
+  padding: 2em;
+}
+
+.perfil-info h2 {
+  font-size: 2em;
+  margin: 0.5em 0;
+}
+
+.perfil-info h3 {
+  font-size: 1.5em;
+  color: #777;
+  margin: 0.5em 0;
+}
+
+.perfil-info p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .fotografo {
+      flex-direction: row;
+  }
+
+  .perfil-img {
+      width: 50%;
+  }
+
+  .perfil-info {
+      width: 50%;
+  }
+}
+
+/*-- Sección Contacto --*/
+.contacto-intro {
+  background: url('imagenes/Firefly\ ondas\ negras\,\ rojas\ y\ plateadas\ creando\ remolinos\ oscuros\ 47609.jpg') no-repeat center center/cover;
+  color: #fff;
+  text-align: center;
+  padding: 6.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin-top: -105px;
+}
+
+.intro-content {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2em;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.intro-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+.intro-content p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin: 1em 0;
+}
+
+.contact-form {
+  margin-top: 1.5em;
+}
+
+.form-group {
+  margin-bottom: 1em;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border: 2px solid #333;
+}
+
+.btn-form {
+  padding: 0.75em 2em;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-form:hover {
+  background-color: #555;
+}
