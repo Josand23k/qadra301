@@ -127,6 +127,11 @@ nav {
   width: 20%;
 }
 }
+@media (max-width: 480px) {
+  header a span {
+    font-size: 1.2em;
+  }
+}
 
 
 /*-- Sección Heroe --*/
