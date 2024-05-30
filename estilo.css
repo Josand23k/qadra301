@@ -193,6 +193,7 @@ header a img {
 .hero h1 {
   font-size: 2em;
 }
+
 }
 
 /*-- Section cards index page --*/
@@ -313,10 +314,14 @@ header a img {
   .services-section {
       flex-direction: column;
       text-align: center;
+      padding: 20px;
   }
   .services-text {
       padding-right: 0;
       padding-bottom: 20px;
+  }
+  .services-text h2 {
+    font-size: 2.5em;
   }
   .services-image {
       text-align: center;
