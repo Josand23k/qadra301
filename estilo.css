@@ -22,37 +22,35 @@
 
   /*-- Header & Menu --*/
 header {
-    width: 90%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 10px;
-    position: relative;
-    z-index: 100;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 0px 0px 10px 10px;
-  }
-header a img { /*-- Logotipo en el header --*/
-    width: 70px;
-}
-header span {  /*-- Nombre de la empresa --*/
-  color: var(--blanco);
-  font-size: 2em;
-  font-weight: bold;
-  text-shadow: 0 6px 4px #0004;
-  width: 35%;
-  text-align: end;
-}
-/*--  Menu RWD --*/
-nav {
-  width: 39%;
-  color: var(--blanco);
-  padding: 1em;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
+  position: relative;
+  z-index: 100;
+  background-color: var(--blanco);
+}
+header a {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-decoration: none;
+  gap: 2em;
+}
+header a img { /*-- Logotipo en el header --*/
+    width: 65px;
+}
+header a span {  /*-- Nombre de la empresa --*/
+  color: var(--clr-negro);
+  font-size: 2em;
+  font-weight: bold;
+  text-shadow: 0 6px 4px #0004;
+}
+/*--  Menu RWD --*/
+nav {
+  width: 50%;
+  padding: 1em;
 }
 
 .menu-toggle {
@@ -70,20 +68,23 @@ nav {
 }
 
 .menu-links a {
-  color: #fff;
+  color: var(--clr-negro);
   text-decoration: none;
   font-size: 1.3em;
   font-weight: bold;
+  justify-content: center;
 }
 .menu-links a:hover {
-  color: #e64a19;
+  color: rgb(179, 48, 0);
 }
 
 @media (max-width: 768px) {
-  header {
-    width: 95%;
+  header > a {
+    width: 70%;
+    justify-content: flex-start;
+    margin-left: 50px;
   }
-  header span {
+  header a span {
     font-size: 1.7em;
   }
   header a img {
@@ -99,43 +100,34 @@ nav {
     flex-direction: column;
     width: 100%;
     left: 0;
-    top: 95px;
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 20px;
-    text-align: center;
+    top: 85px;
+    background-color: var(--blanco);
+    gap: 0;
   }
 
   .menu-links.active {
       display: flex;
   }
+  .menu-links a {
+    width: 100%;
+    padding: 10px 0px;
+  }
+  .menu-links a:hover {
+    background-color: #dddbdb;
+    color: var(--clr-negro);  
+  }
 }
 
 @media (max-width: 600px) {
-header {
-  justify-content: space-between;
-  padding: 0;
+header > a {
+  margin-left: 10px;
+  width: 80%;
 }
-header span {
-  font-size: 1.3em;
-}
-.menu-toggle {
-  margin-left: auto;
-}
-header a img {
-  width: 50px;
-}
-.menu-links {
-  top: 70px;
+nav {
+  width: 20%;
 }
 }
-@media (max-width: 480px) {
-header {
-  width: 98%;
-}
-header span {
-  font-size: 1.1em;
-}
-}
+
 
 /*-- Sección Heroe --*/
 .hero {
