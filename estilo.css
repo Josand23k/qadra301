@@ -99,8 +99,8 @@ nav {
     flex-direction: column;
     width: 100%;
     left: 0;
-    top: 85px;
-    background-color: var(--clr-negro);
+    top: 95px;
+    background-color: rgba(0, 0, 0, 0.9);
     padding: 20px;
     text-align: center;
   }
@@ -108,6 +108,25 @@ nav {
   .menu-links.active {
       display: flex;
   }
+}
+
+@media (max-width: 600px) {
+header {
+  justify-content: space-between;
+  padding: 0;
+}
+header span {
+  font-size: 1.3em;
+}
+.menu-toggle {
+  margin-left: auto;
+}
+header a img {
+  width: 50px;
+}
+.menu-links {
+  top: 70px;
+}
 }
 
 /*-- Sección Heroe --*/
@@ -168,6 +187,12 @@ nav {
 
 .testimonial p {
   font-size: 1.2em;
+}
+
+@media (max-width: 600px) {
+.hero h1 {
+  font-size: 2em;
+}
 }
 
 /*-- Section cards index page --*/
