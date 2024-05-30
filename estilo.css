@@ -128,6 +128,14 @@ header a img {
   top: 70px;
 }
 }
+@media (max-width: 480px) {
+header {
+  width: 98%;
+}
+header span {
+  font-size: 1.1em;
+}
+}
 
 /*-- Sección Heroe --*/
 .hero {
@@ -193,7 +201,11 @@ header a img {
 .hero h1 {
   font-size: 2em;
 }
-
+}
+@media (max-width: 480px) {
+.hero {
+  padding: 70px 10px 20px;
+}
 }
 
 /*-- Section cards index page --*/
