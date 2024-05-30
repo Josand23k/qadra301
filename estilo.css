@@ -146,7 +146,7 @@ nav {
   text-align: center;
   color: white;
   padding: 20px;
-  margin-top: -105px;
+  
 }
 
 .hero-content {
@@ -197,11 +197,6 @@ nav {
 @media (max-width: 600px) {
 .hero h1 {
   font-size: 2em;
-}
-}
-@media (max-width: 480px) {
-.hero {
-  padding: 70px 10px 20px;
 }
 }
 
