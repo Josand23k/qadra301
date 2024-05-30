@@ -81,44 +81,49 @@ nav {
 
 @media (max-width: 768px) {
 header > a {
-    width: 70%;
-    justify-content: flex-start;
-    margin-left: 50px;
+  width: 70%;
+  justify-content: flex-start;
+  margin-left: 50px;
 }
-  header a span {
-    font-size: 1.5em;
-  }
-  header a img {
-    width: 60px;
-  }
-  .menu-toggle {
-      display: block; /* Show button on small screens */
-      
-  }
-
-  .menu-links {
-    display: none;
-    position: absolute;
-    flex-direction: column;
-    width: 100%;
-    left: 0;
-    top: 85px;
-    background-color: var(--blanco);
-
-    gap: 0;
-  }
-
-  .menu-links.active {
-      display: flex;
-  }
+header a span {
+  font-size: 1.5em;
+}
+header a img {
+  width: 60px;
+}
+.menu-toggle {
+  display: block; /* Show button on small screens */
+    
+}
+.menu-links {
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  width: 100%;
+  left: 0;
+  top: 85px;
+  background-color: var(--blanco);
+  gap: 0;
+}
+.menu-links.active {
+  display: flex;
+}
 .menu-links a {
-    width: 100%;
-    padding: 10px 0px;
+  width: 100%;
+  padding: 10px 0px;
 }
 .menu-links a:hover {
-    background-color: #dddbdb;
-    color: var(--clr-negro);
-    
+  background-color: #dddbdb;
+  color: var(--clr-negro);  
+}
+}
+@media (max-width: 768px) {
+header > a {
+  margin-left: 10px;
+  width: 80%;
+}
+nav {
+  width: 20%;
 }
 }
 
@@ -180,6 +185,12 @@ header > a {
   .testimonial p {
     font-size: 1.2em;
   }
+  @media (max-width: 600px) {
+    .hero h1 {
+      font-size: 2em;
+    }
+  }
+
 
   /*-- Section cards index page --*/
 .cards-section {
